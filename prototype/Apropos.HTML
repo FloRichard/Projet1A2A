@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>À propos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+  <body>
+    <header>
+      <div class="columns is-mobile">
+      <div class="column has-text-left"> 
+          <div class="column has-text-left">
+          <h1 class="title">À Propos</h1>
+        </div>
+        </div>
+              <div class="column is-one-fifth is-one-half-mobile has-text-centered">
+        <div class="dropdown is-hoverable">
+        <div class="dropdown-trigger">
+          <button class="button is-pulled-right" aria-haspopup="true" aria-controls="dropdown-menu" id="BouttonMenu">
+            <span>Menu</span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+          <div class="dropdown-content">
+             <a class="dropdown-item " onclick="changerCouleur();document.location='Accueil.html?'+getCouleurBis();">
+              Accueil
+            </a>
+            <a class="dropdown-item" onclick="changerCouleur();document.location='recherche.html?'+getCouleurBis();">
+              Rechercher
+            </a>
+            <a class="dropdown-item" href="javascript:window.history.go(-1)">
+              Retour
+            </a>
+            <a class="dropdown-item" onclick="seDeconnecter()">
+              Se déconnecter
+            </a>
+            <a href="#" class="dropdown-item ">
+              Aide
+            </a>
+          </div>
+         </div>
+         </div>
+      </div>
+      
+    </div>
+    </header>
+    <div class="section">
+      <div class="container">
+        <p>Application développée par DA SILVA Mattéo, MEON Alexis,  <br>
+          MONTEIL Julien, RICHARD Florian à la demande de Mme Jort.<br>
+          Grâce à cette application vous pourrez consulter les salles libres<br> 
+          de l'IUT et les réserver.<br>
+        </p>
+  <script type="text/javascript">
+    window.onload=changerCouleur();
+  </script>
+  </body>
+</html>

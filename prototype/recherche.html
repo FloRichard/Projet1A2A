@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rechercher</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+  <body>
+  	<!--HEADER-->
+  	<header>
+  		<div class="columns is-mobile">
+  			<div class="column has-text-left">
+  				<h1 class="title">Rechercher</h1>
+  			</div>
+        <!--MENU-->
+
+  			<div class="column is-one-fifth is-one-half-mobile has-text-centered">
+			  <div class="dropdown is-hoverable">
+			  <div class="dropdown-trigger">
+			    <button class="button is-pulled-right" aria-haspopup="true" aria-controls="dropdown-menu" id="BouttonMenu">
+			      <span>Menu</span>
+			      <span class="icon is-small">
+			        <i class="fas fa-angle-down" aria-hidden="true"></i>
+			      </span>
+			    </button>
+			  </div>
+			  <div class="dropdown-menu" id="dropdown-menu" role="menu">
+			    <div class="dropdown-content">
+             <a class="dropdown-item " onclick="changerCouleur();document.location='Accueil.html?'+getCouleurBis();">
+              Accueil
+            </a>
+            <a class="dropdown-item" onclick="changerCouleur();document.location='réservation.html?'+getCouleurBis();">
+              Réserver
+            </a>
+			      <a class="dropdown-item" href="javascript:window.history.go(-1)">
+			        Retour
+			      </a>
+			      <a class="dropdown-item" onclick="seDeconnecter()">
+			        Se déconnecter
+			      </a>
+			      <a href="#" class="dropdown-item ">
+			        Aide
+			      </a>
+			      <hr class="dropdown-divider">
+			      <a class="dropdown-item" onclick="changerCouleur();document.location='Apropos.html?'+getCouleurBis();">
+			        A propos
+			      </a>
+			    </div>
+			   </div>
+			   </div>
+			</div>
+  			
+  		</div>
+  	</header>
+  	<!--bloc numero de salle-->
+
+     <section class="section">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-one-third-desktop is-offset-one-third-desktop">
+              <div class="toBorder">
+                <p>N° de salle</p>
+              </div>
+            </div>
+          </div>
+          <div class="columns is-centered">
+            <div class="column is-1-desktop is-one-third-desktop ">
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="text" name="numSalle">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+     <!--bloc type de salle-->
+     <section class="section is-small">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-one-third-desktop is-offset-one-third-desktop">
+              <div class="toBorder">
+                <p>Choissisez le type de(s) salle(s)</p>
+              </div>
+            </div>
+          </div>
+          <div class="columns is-mobile is-centered has-text-centered ">
+          	<div class="column is-one-thirds-mobile is-narrow-desktop">
+          		<label class="checkbox">
+  					<input type="checkbox">
+  					Plate
+				</label>
+			</div>
+			<div class="column is-one-thirds-mobile  is-narrow-desktop">
+          		<label class="checkbox">
+  					<input type="checkbox">
+  					Machine
+				</label>
+			</div>
+			<div class="column is-one-thirds-mobile  is-narrow-desktop">
+          		<label class="checkbox">
+  					<input type="checkbox">
+  					Mixte
+				</label>
+			</div>
+        </div>
+     </section>
+
+     <!--bloc date-->
+
+    <section class="section">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-one-third-desktop is-offset-one-third-desktop">
+              <div class="toBorder">
+                <p>Date</p>
+              </div>
+            </div>
+          </div>
+          <div class="columns is-mobile has-text-centered is-centered has-text-centered">
+          	<div class="column is-narrow-desktop is-one-thirds-mobile">
+                <input type="date" class="input">   
+      </div>
+    </div>
+  </div>
+     </section>
+
+<!--bloc heure-->
+
+    <section class="section">
+        <div class="container">
+	        <div class="columns">
+            <div class="column is-one-third-desktop is-offset-one-third-desktop">
+              <div class="toBorder">
+                <p>Heure</p>
+              </div>
+            </div>
+          </div>
+	        <div class="columns is-mobile is-centered has-text-centered">
+	        	<div class="column is-1-desktop is-one-thirds-mobile">
+		          <div class="field">
+                <input type="time" min="8:00" max="18:00" class="input">
+              </div>
+		        </div>
+        	</div>
+     </section>
+     <!--Bouton-->
+     <div class="block">
+          <div class="columns is-mobile has-text-centered">
+            <div class="column is-one-third">
+            </div>
+            <div class="column is-one-third">
+              <input class="button " type="submit" value="Rechercher">
+            </div>
+          </div>
+        </div>
+  <script type="text/javascript">
+    window.onload=changerCouleur();
+  </script>
+  </body>
+  </html>

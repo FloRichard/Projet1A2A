@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Réservation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+ 
+  <body>
+   	<!--HEADER-->
+     <header>
+  		<div class="columns is-mobile">
+  			<div class="column has-text-left">
+  				<h1 class="title">Réservation</h1>
+  			</div>
+        <!--MENU-->
+
+  			<div class="column is-one-fifth is-one-half-mobile has-text-centered">
+			  <div class="dropdown is-hoverable">
+			  <div class="dropdown-trigger">
+			    <button class="button is-pulled-right" aria-haspopup="true" aria-controls="dropdown-menu" id="BouttonMenu">
+			      <span>Menu</span>
+			      <span class="icon is-small">
+			        <i class="fas fa-angle-down" aria-hidden="true"></i>
+			      </span>
+			    </button>
+			  </div>
+			  <div class="dropdown-menu" id="dropdown-menu" role="menu">
+			    <div class="dropdown-content">
+             <a class="dropdown-item " onclick="changerCouleur();document.location='Accueil.html?'+getCouleurBis();">
+              Accueil
+            </a>
+			      <a class="dropdown-item" onclick="changerCouleur();document.location='recherche.html?'+getCouleurBis();">
+			        Rechercher
+			      </a>
+			      <a class="dropdown-item" href="javascript:window.history.go(-1)">
+			        Retour
+			      </a>
+			      <a class="dropdown-item" onclick="seDeconnecter()">
+			        Se déconnecter
+			      </a>
+			      <a href="#" class="dropdown-item ">
+			        Aide
+			      </a>
+			      <hr class="dropdown-divider">
+			      <a class="dropdown-item" onclick="changerCouleur();document.location='Apropos.html?'+getCouleurBis();">
+			        A propos
+			      </a>
+			    </div>
+			   </div>
+			   </div>
+			</div>
+  			
+  		</div>
+  	</header>
+  	<!--Ajuster créneau-->
+
+    <section class="section">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-one-third-desktop is-offset-one-third-desktop">
+              <div class="toBorder">
+                <p>Ajuster le créneau</p>
+              </div>
+            </div>
+          </div>
+          <div class="columns is-mobile is-centered">
+            <div class="column is-2-desktop is-one-half-mobile">
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="text" name="debut" value="" placeholder="Début" id="Debut">
+                </div>
+              </div>
+            </div>
+            <div class="column is-2-desktop is-one-half-mobile">
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="text" name="fin" value="" id="Fin" placeholder="Fin">
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+     </section>
+
+     <!--résumé de la réservation-->
+     <section class="section">
+        <div class="container">
+        <div class="columns">
+          <div class="column is-one-third-desktop is-offset-one-third-desktop">
+          <div class="toBorder">
+            <p class="pAMargin" style="color:black">Résumé de la réservation :</p>
+          </div>
+          <div>
+            <p>N° de salle: 2235</p>
+            <p>Créneau: 9h00-11h00</p>
+            <p>Type de salle: machine</p>
+        </div>
+      </div>
+    </div>
+     </section>
+
+     <!--Justification réservation-->
+
+     <section class="section">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-one-third-desktop is-offset-one-third-desktop">
+              <div class="toBorder">
+                <p class="pAMargin" style="color:black">Justifiez votre réservation</p>
+              </div>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column is-one-third-desktop is-offset-one-third-desktop">
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="text" name="Jusitification" id="Justification">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+     </section>
+     <!--Bouton-->
+     <div class="block">
+          <div class="columns is-mobile has-text-centered">
+            <div class="column is-one-half">
+              <input class="button " type="submit" value="Valider" onclick="validerResa()">
+            </div>
+          </div>
+        </div>
+  <script type="text/javascript">
+    window.onload=changerCouleur();
+  </script>
+  </body>
+  </html>

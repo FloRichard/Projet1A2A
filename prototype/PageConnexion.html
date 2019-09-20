@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+  </head>
+  
+  <body id="body">
+    <header>
+      <div class="columns is-mobile">
+        <div class="column has-text-left is-pulled-left">
+            <h1 class="title">Connexion</h1>
+        </div>
+      </div>
+    </header>
+
+    <!--bloc identifiant-->
+
+    <section class="section">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-one-third-desktop is-offset-one-third-desktop">
+              <div class="toBorder">
+                <p>Rentrez votre identifiant</p>
+              </div>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column is-one-third-desktop is-offset-one-third-desktop">
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="text" name="identifiant">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--bloc mot de passe-->
+
+      <section class="section">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-one-third-desktop is-offset-one-third-desktop">
+              <div class="toBorder">
+                <p>Rentrez votre mot de passe</p>
+              </div>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column is-one-third-desktop is-offset-one-third-desktop">
+              <div class="field">
+                <div class="control">
+                  <input class="input" type="text" name="motDePasse">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+       <!--bloc choix département-->
+
+        <section class="section">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-one-third-desktop is-offset-one-third-desktop">
+              <div class="toBorder">
+                <p>Choissisez votre département</p>
+              </div>
+            </div>
+          </div>
+          <form action="/Accueil.html" method="post" class="formulaire">
+            <div class="control" id="controlRad">
+              <div class="columns is-mobile is-centered">
+                <div class="column is-one-thirds-mobile is-narrow-desktop">
+                  <label class="radio">
+                    <input type="radio" name="dep" onclick="getCouleur('gold')">
+                    InfoCom.
+                  </label>
+                </div>
+                <div class="column is-one-thirds-mobile  is-narrow-desktop"  onclick="getCouleur('blue')">
+                  <label class="radio">
+                    <input type="radio" name="dep">
+                    Info.
+                  </label>
+                  <form action="Accueil.html" method="GET">
+                      <input type="hidden" name="couleur"  value="blue"/>
+                  </form>
+                </div>
+                <div class="column is-one-thirds-mobile  is-narrow-desktop"  onclick="getCouleur('red')">
+                  <label class="radio">
+                    <input type="radio"  value ="blue" name="dep">
+                    Rés & Tel.
+                  </label>
+                </div>
+              </div>
+            </div>
+         </form>
+        </div>
+        </section>
+        <!--BOUTON SE CONNECTER-->
+        <div class="block">
+          <div class="columns is-mobile  is-centered has-text-centered">            
+            <div class="column is-one-third">
+              <input class="button " type="submit" value="Se connecter" onclick="changerCouleur();document.location='Accueil.html?'+couleur">
+            </div>
+          </div>
+        </div>
+  <script type="text/javascript">
+    window.onload=changerCouleur();
+  </script>
+  </body>
+  </html>

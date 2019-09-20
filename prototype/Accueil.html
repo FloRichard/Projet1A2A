@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>');
+  </script>
+
+    <link rel="stylesheet" href="OutilModifie/css/jquery.skeduler.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+  <script type="text/javascript" src="OutilModifie/js/jquery.skeduler.js"></script>
+  <script type="text/javascript" src="OutilModifie/js/weekSchedule.js"></script>
+  <script type="text/javascript" src="OutilModifie/js/edt.js"></script>
+  </head>
+  
+  <body id="body">
+    <script type="text/javascript">         
+      //sets global vars
+    //the sole ADE ressource to be diplayed
+    var ADERessource=38484;
+    //the URL of the EDT Reader webservice
+    var _webservice="http://localhost/prototype/OutilModifie/php/EDTReader.php";
+    //the format of EDT display
+    var _format="week";
+      /**
+      * Initializes the whole display of the schedule
+      * 
+      * @returns {none}
+    */
+    $(document).ready(function(){
+        displayDate("_date");
+        showEDT(ADERessource,"edt");
+      }
+    );  
+  </script>
+  	<!-- HEADER -->
+    <body id="body">
+  	<header>
+  		<div class="columns is-mobile">
+  			<div class="column has-text-left">
+  				<h1 class="title">Accueil</h1>
+  			</div>
+        <!--recherche.html-->
+  			<div class="column is-one-fifth is-one-half-mobile has-text-centered">
+			  <div class="dropdown is-hoverable">
+			  <div class="dropdown-trigger">
+			    <button class="button is-pulled-right" aria-haspopup="true" aria-controls="dropdown-menu" id="BouttonMenu">
+			      <span>Menu</span>
+			      <span class="icon is-small">
+			        <i class="fas fa-angle-down" aria-hidden="true"></i>
+			      </span>
+			    </button>
+			  </div>
+			  <div class="dropdown-menu" id="dropdown-menu" role="menu">
+			    <div class="dropdown-content">
+            <a class="dropdown-item" onclick="changerCouleur();document.location='Accueil.html?'+getCouleurBis();">
+              Accueil
+            </a>
+			      <a class="dropdown-item" onclick="changerCouleur();document.location='recherche.html?'+getCouleurBis();">
+			        Rechercher
+			      </a>
+            <a class="dropdown-item" onclick="changerCouleur();document.location='réservation.html?'+getCouleurBis();">
+              Réserver
+            </a>
+			      <a class="dropdown-item" href="javascript:window.history.go(-1)">
+			        Retour
+			      </a>
+			      <a class="dropdown-item"  onclick="seDeconnecter()">
+			        Se déconnecter
+			      </a>
+			      <a href="#" class="dropdown-item ">
+			        Aide
+			      </a>
+			      <hr class="dropdown-divider">
+			      <a class="dropdown-item" onclick="changerCouleur();document.location='Apropos.html?'+getCouleurBis();">
+			        A propos
+			      </a>
+			    </div>
+			   </div>
+			   </div>
+			</div>
+  			
+  		</div>
+  	</header>
+  	<!-- BODY -->
+  	<!--<section class="section">
+  		<div class="container is-fluid">
+  			<div class="columns is-mobile">
+  				<div class="column is-one-half">
+  					<button class="button is-small" >
+  						<span class="icon is-small">
+  							<i class="fas fa-angle-left"></i>
+  						</span>
+  					</button>
+  				</div>
+  				<div class="column">
+  					<button class="button is-small is-pulled-right" >
+  						<span class="icon is-small">
+  							<i class="fas fa-angle-right"></i>
+  						</span>
+  					</button>
+  				</div>
+  			</div>
+  		</div>
+      <div class="container">
+  		<div class="level">
+  			<div class="level-left">
+  				<div class="level-item">
+  					<script language="javascript">afficheDate(); </script>
+          </div>
+        </div>
+        <div class="level-left">
+  				</div class="level-item">
+  					<p>Salles libres selon votre départment</p>
+          </div>  
+  			</div>
+  		</div>
+    -->
+  	
+    <section class="section has-text-centered">
+      <div  id="edt">
+        <!-- The div that will display the schedule -->
+      </div>
+  </section>
+  <script type="text/javascript">
+    window.onload=changerCouleur();
+  </script>
+  </body>
+</html>
