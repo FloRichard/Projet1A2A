@@ -1,0 +1,73 @@
+/* http://htmlcolorcodes.com/fr/ */
+* {
+    font-family: Helvetica, ​Arial, ​sans-serif;
+  }
+#CM{
+  background-color: #070C9E;
+}
+
+#CTRL, #CTP {
+  background-color: #D60F02;
+}
+
+#TD {
+  background-color: #067305;
+}
+
+#TP {
+  background-color: #9E9C07;
+}
+
+#choice {
+  font-family: Helvetica, ​Arial, ​sans-serif;
+}
+
+#footer {
+	font-family: Helvetica, ​Arial, ​sans-serif;
+}
+.theGroup {
+  font-family: Helvetica, ​Arial, ​sans-serif;
+	color:red;
+  padding-left:100px;
+  font-size:24px;  
+}
+p {
+  font-family: Helvetica, ​Arial, ​sans-serif;
+}
+.container {
+  width:650px;
+  height:380px;
+  color:black;
+  overflow:hidden;
+}
+
+.container ul{
+  list-style:none;
+  overflow: hidden;
+}
+.container li{
+  text-align:left;
+  border:1px solid #000;
+  color:black;
+  margin-bottom:5px;
+}
+
+.container h1 {
+  margin: 0px 0px 0px 0px;
+  background-color: #b30000;
+  text-align:center;
+  color:white;
+}
+
+.container h2{
+  padding-left:10px;
+  margin: 0px 0px 0px 0px;
+  background-color: #062e70;
+  color:white;
+}
+.container h3{
+  text-align:left;
+  padding-left:20px;
+  margin: 0px 0px 0px 0px;
+  background-color: #dbd6d0;
+ }  

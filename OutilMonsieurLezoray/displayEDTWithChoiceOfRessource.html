@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+  	<meta charset="utf-8">
+	<title>Emploi du temps</title>
+	<!-- jQuery library -->
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+	<script>
+		window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>');
+	</script>
+
+    <link rel="stylesheet" href="css/jquery.skeduler.css" type="text/css">
+	<script type="text/javascript" src="js/jquery.skeduler.js"></script>
+	<script type="text/javascript" src="js/weekSchedule.js"></script>
+	<script type="text/javascript" src="js/edt.js"></script>
+</head>
+<body>	
+	<script type="text/javascript"> 	
+		//the ressources to be displayed
+	  	var theRessources = {
+		  	"MMI-1": {
+		  		"TD1" : {
+		  			"TP1" : 90512, "TP2" : 90513
+		  		},
+		  		"TD2" : {
+		  			"TP3" : 18730, "TP4" : 23035
+		  		}
+		  	},
+		  	"MMI-2":{
+		  		"TD1" : {
+		  			"TP1" : 90519, "TP2" : 90520
+		  		},
+		  		"TD2" : {
+		  			"TP3" : 90517, "TP4" : 90518
+		  		}
+		  	},
+			"Salles":{
+				"Amphithéatre":68315,
+				"100":115198,//Pb salle 100 ?
+				"113":115200,
+				"Salle Examen":68670,
+				"Salle Multimédia":67790
+			}
+	  	};
+	  	//sets global vars
+		//the set of ADE ressources
+		var ADERessources={};
+		//the set of ADE groups of ressources
+		var ADEGroups=[];
+		//the URL of the EDT Reader webservice
+		var _webservice="https://dev-lezoray.users.greyc.fr/edt/php/EDTReader.php";
+		//the format of EDT display
+		var _format="week";
+	  	/**
+			* Initializes the whole display of the schedule
+			* 
+			* @returns {none}
+		*/
+		$(document).ready(function(){
+				displayDate("_date");
+				$('#choiceOfRessourceLabel').hide();
+				$('#choiceOfRessource').hide();
+				generateListOfRessourcesAndGroups(theRessources,ADERessources,ADEGroups);
+				$('#choiceOfPromotion').html(generatePromotionOptions("choiceOfPromotion",ADEGroups));
+				showTheEDT();
+			}
+		);	
+		/**
+			* Displays the schedule of the selected ressource
+			* 
+			* @returns {none}
+		*/
+		function showTheEDT() {
+			var _ressource=$('#choiceOfRessource').val();
+			showEDT(_ressource,"edt");
+		}
+		
+
+	</script>
+	<div id="choice">
+	 	<form>
+			<label for="choiceOfPromotion">Choisissez un groupe: </label>
+			<select id="choiceOfPromotion"
+				onChange="generateChoiceWithOption(ADERessources,'edt','choiceOfRessource','choiceOfPromotion')">
+			</select>
+			<label id="choiceOfRessourceLabel" for="choiceOfRessource">puis une ressource : </label>
+			<select id="choiceOfRessource" onChange="showTheEDT()">
+			</select>
+		</form>
+	</div>
+
+	<div id="edt">
+	 	<!-- The div that will display the schedule -->
+	</div>
+	<div id="footer">
+		<a target="_blank" href="http://www.unicaen.fr"><img style="height:50px;padding:10px" src="img/logos/logo-UNICAEN.jpg"/></a>	
+		<a target="_blank" href="http://iutcherbourgmanche.unicaen.fr"><img style="height:50px;padding:10px" src="img/logos/logo_iutcherbourg.jpg"/></a>			
+		<a target="_blank" href="https://www.stlo.unicaen.fr/mmi/"><img style="height:50px;padding:10px" src="img/logos/mmi-logo.jpg"/></a>													
+		<div>&copy; <span id="_date"></span> - All rights reserved. O. Lézoray</div>
+	</div>
+</body>
+</html>
